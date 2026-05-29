@@ -1,9 +1,9 @@
-name: ai-chatbot
-channels:
-  - conda-forge
-dependencies:
-  - python=3.13
-  - pip
-  - pip:
-      - openai
-      - streamlit
+services:
+  - type: web
+    name: ai-chatbot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run openAi.py --server.port=$PORT --server.address=0.0.0.0
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.0
