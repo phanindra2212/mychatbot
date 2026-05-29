@@ -1,0 +1,9 @@
+name: ai-chatbot
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - openai
+      - streamlit
